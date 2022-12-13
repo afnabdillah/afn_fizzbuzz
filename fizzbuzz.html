@@ -12,14 +12,16 @@
 <body>
     <header>
         <h1>Get a FizzBuzz Result!</h1>
-        <p>Type a number : <input id="input-num"> <button onclick="fizzbuzz('input-num')">Click here!</button></p>
+        <p>Type a number : <input type="number" id="input-num"> <button onclick="fizzbuzz('input-num')">Click here!</button></p>
     </header>
     <main>
         <p id="output"></p>
         <script>
             const fizzbuzz = (param) => {
-                let n = document.getElementById(param).value;
-                if ( typeof n !=="number" || n <= 0) {
+                let n = parseInt(document.getElementById(param).value);
+                console.log(n);
+                console.log(typeof n);
+                if ( n <= 0) {
                     document.getElementById("output").innerHTML="invalid input";
                     document.getElementById("output").style.color="red";
                 } else if (n % 3 == 0 && n % 5 == 0) {
